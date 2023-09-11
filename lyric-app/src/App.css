@@ -1,0 +1,158 @@
+.secondhalf{
+  background-color:#ECF9FD;
+  padding-top: 20px;
+  padding-left: 40px;
+  height:750px;
+  
+}
+.navi{
+  width: 280px;
+  height: 750px;
+  float:left;
+  background-color:white;
+}
+.topbar{
+  width: 100%;
+  height:100px;
+  background-color:white;
+}
+.divide{
+  columns: 2;
+}
+input[type="text"],input[type="email"]
+{
+  background-color: transparent;
+  margin-bottom: 25px;
+  border: 2px solid rgb(104, 102, 102);
+  border-radius: 8px;
+  border-color: gray;
+  padding: 5px;
+  flex:4;
+  max-width:350px;
+ 
+}
+.both{
+  max-width: 600px;
+  color:grey;
+  font-style: oblique;  
+  font-family: raleway, sans-serif;
+  padding: 50px;
+}
+.button{
+  background-color:#00DBFE;
+  height: 8%;
+  width: 12%;
+  border-radius: 10px;
+  padding: 7px;
+  color: white;
+  font-weight: bolder;
+  font-size: larger;
+  border-color: transparent;
+}
+
+.button1{
+  
+  height: 17%;
+  width: 12%;
+  border-radius: 10px;
+  padding: 7px;
+  margin-left: 5px;
+  font-weight: bolder;
+  font-size: larger;
+  border-color: rgba(23, 185, 245, 0.234);
+  background-color:transparent ;
+  
+}
+.fullbutton{
+ margin-left: 285px;
+
+}
+ .button:hover{
+  background-color: transparent;
+  color:orangered;
+ }
+ .button1:hover{
+  border-color: transparent;
+  color: orangered;
+ }
+.form-row {
+  display: flex;
+  justify-content: space-between; 
+  margin-bottom: 10px; 
+}
+label{
+  flex:1;
+  text-align:left;
+  padding-top: 3px;
+}
+h2{
+  margin-top: 50px;
+  margin-left: 285px;
+  margin-bottom: 0%;
+  font-family: raleway, sans-serif;
+  font-size:larger;
+}
+h1{
+  padding-top: 40px;
+  padding-left: 80px;
+  font-size: 20px;
+  font-family: raleway, sans-serif;
+  color:#050000;
+}
+.margin{
+  margin-top: 48px;
+}
+button{
+  width: 280px;
+  height: 50px;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: larger;
+  color: grey;
+}
+
+.label {
+  cursor: pointer;
+  border: transparent;
+  width: 280px;
+  height: 300px;
+  background-color: transparent;
+  display: inline-block;
+  font-family: raleway, sans-serif;
+}
+.label:hover {
+  background:transparent;
+}
+.label:active {
+  background:transparent;
+}
+.label:invalid + span {
+  color: #000000;
+}
+.label:valid + span {
+  color: #ffffff;
+}
+img{
+  max-width: 280px;
+  max-height: 200px;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  margin-top: 50px;
+  margin-left: 20px;
+  align-self: center;
+}
+.none{
+  display: none;
+  max-width: 01px;
+  max-height: 30px;
+}
+.material-symbols-outlined {
+  display: inline;
+  font-size:large;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
