@@ -118,11 +118,7 @@ setischanged(!ischanged);
     console.log("chnge:", selectedFile);   
    // uploadImage();
   };
-  useEffect(() => {
-    // This code will run every time selectedFile changes
-    console.log("useeffect");
-    console.log("selectedFile:",selectedFile);
-  }, [selectedFile]);
+ 
   
   return (
     <div>
