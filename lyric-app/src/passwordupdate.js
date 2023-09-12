@@ -75,7 +75,7 @@ function Passwordupdate(){
       });
   }, [ischanged]);
 
-   // Function to upload the selected image to AWS S3
+// Function to upload the selected image to AWS S3
    const uploadImage = async () => {
     if (!selectedFile) {
       alert('Please select an image to upload');
@@ -128,19 +128,19 @@ setischanged(!ischanged);
 
     </div>
     <div className='secondhalf'>
-        <h2>PASSWORD</h2>
+        <h2 className='movedown'>PASSWORD</h2>
         <br></br>
         <div className='divide '>
         <div className='both'>   
 
         <div className='form-row'>        
-        <label for="oldpassword">Old Password </label>
+        <label htmlfor="oldpassword">Old Password </label>
         <input  type="text" name="oldpassword" id="oldpassword" value={passwords.oldPassword}
                 onChange={(e) =>setPasswords({ ...passwords, oldPassword: e.target.value }) }/><br />
         </div>
 
         <div className='form-row'> 
-        <label >New Password</label>
+        <label htmlfor="newpassword">New Password</label>
         <input  type="text" name="newpassword" id="newpassword"  value={passwords.newPassword}
                 onChange={(e) =>setPasswords({ ...passwords, newPassword: e.target.value })} /><br />
         </div>
@@ -150,7 +150,7 @@ setischanged(!ischanged);
         <div className='both'>
         <div className='margin'>
         <div className='form-row'> 
-        <label className=''>Confirm Password </label>
+        <label htmlfor="confirmpassword">Confirm Password </label>
         <input  type="text" name='confirmpassword' id='confirmpassword' value={passwords.confirmPassword}
                   onChange={(e) => setPasswords({...passwords,confirmPassword: e.target.value,})}/><br></br>
         </div>

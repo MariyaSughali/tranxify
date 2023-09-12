@@ -149,7 +149,7 @@ setischanged(!ischanged);
 
         <div className='form-row'> 
         <label for="role">Role </label>
-        <input  type="text" name="role" id="role" defaultValue={changedData.role} onChange={handleChanges} />
+        <input  type="text" className='pointerevent' name="role" id="role" defaultValue={changedData.role} readonly />
         </div>
 
         </div>
@@ -168,7 +168,7 @@ setischanged(!ischanged);
 
         <div className='form-row'> 
         <label>Language  </label>
-        <input  type="text" name='language' id='language' value={changedData.language} onChange={handleChanges}/><br></br>
+        <input  type="text"  name='language' id='language' value={changedData.language} onChange={handleChanges} /><br></br>
 
         </div></div>
         </div>

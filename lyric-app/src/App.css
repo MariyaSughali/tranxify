@@ -156,3 +156,10 @@ img{
   'GRAD' 0,
   'opsz' 24
 }
+.pointerevent{
+  pointer-events: none;
+}
+.movedown{
+  margin-top: 180px;
+  margin-bottom: 10px;
+}
