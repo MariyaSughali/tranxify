@@ -94,7 +94,7 @@ try {
       'Content-Type': 'multipart/form-data',
     },
   });
-  alert('Image uploaded to AWS S3 successfully');
+  alert('Image uploaded to successfully');
 } catch (error) {
   console.error('Error uploading image:', error);
   alert('Image upload failed');

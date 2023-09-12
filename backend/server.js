@@ -17,7 +17,7 @@ const pool = new Pool({
   database: "lyricTrans_profileUpdate",
   port: 5432,
 });
-
+//edit user data
 app.put('/editdata', async (req, res) => {
   try {
     const { firstname, secondname, email, phone, language, role } = req.body;
@@ -31,7 +31,7 @@ app.put('/editdata', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
-
+//get user data from db
 app.get('/', async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM profile WHERE id = 1");
@@ -41,6 +41,7 @@ app.get('/', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+// cahnge user password
 app.put('/changepassword', async (req, res) => {
   try {
     const { oldPassword, newPassword } = req.body;
@@ -70,19 +71,7 @@ app.put('/changepassword', async (req, res) => {
   }
 });
 
-//trying
-app.put('/editprofile', async (req, res) => {
-    try {
-      const { image } = req.body;
-      await pool.query("UPDATE profile SET image = $1 WHERE id = 1", [image]);
-      res.json({ message: 'Profile picture updated successfully' });
-    } catch (error) {
-      console.error('Error updating profile picture:', error);
-      res.status(500).json({ message: 'Internal server error' });
-    }
-  });
-
-//trying
+//profile picture update
 const aws= require("aws-sdk");
 const multer= require ("multer");
 const multers3= require ("multer-s3");
