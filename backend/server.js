@@ -76,14 +76,6 @@ const aws= require("aws-sdk");
 const multer= require ("multer");
 const multers3= require ("multer-s3");
 
-aws.config.update({
-    accessKeyId:"AKIAWJUYWBOYM2OA5BTO",
-    secretAccessKey:"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",
-    signatureVersion: 'v4',
-    region: 'ap-south-1',
-    endpoint:'s3.ap-south-1.amazonaws.com'
-  });
-
 const s3 = new aws.S3({
     accessKeyId:"AKIAWJUYWBOYM2OA5BTO",
     secretAccessKey:"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",
@@ -99,7 +91,6 @@ const upload = multer(
           s3: s3,
           bucket: "tranxify",
           metadata: function (req, file, cb) {
-            console.log(file);
             cb(null, { fieldName: file.originalname });
           },
           key: function (req, file, cb) {
@@ -114,7 +105,7 @@ app.get('/url/:filename', (req, res, next) => {
   const params = {
     Bucket: "tranxify",
     Key: req.params.filename,
-    Expires: 86400
+    Expires: 604799
   };
 
   s3.getSignedUrl("getObject", params, function (err, url) {
@@ -126,7 +117,6 @@ app.get('/url/:filename', (req, res, next) => {
  // Update the PostgreSQL database with the generated URL
       pool.query("UPDATE profile SET image=$1 WHERE id=1", [imageUrl])
         .then(() => {
-          console.log("Image uploaded to the database:  "+url);
           res.send(url);
         })
         .catch(error => {
@@ -141,7 +131,6 @@ app.get('/url/:filename', (req, res, next) => {
 
 app.post('/up', upload.single('photos'), function (req, res, next) {
     res.send({ data: req.file, msg: 'Successfully uploaded files!' });
-  //res.set('Content-Type', 'image/png');
   });
 
 app.listen(PORT, () => {

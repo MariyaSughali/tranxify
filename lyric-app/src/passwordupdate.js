@@ -29,7 +29,7 @@ function Passwordupdate(){
       // Send a PUT request to update the password
       await axios.put('http://localhost:3008/changepassword', {
         oldPassword:passwords.oldPassword,
-        newPassword: passwords.newPassword, // Use 'password' to match your backend
+        newPassword: passwords.newPassword, 
       });
       alert('Password updated successfully');
       setPasswords({ oldPassword:'',
@@ -77,14 +77,11 @@ function Passwordupdate(){
 
    // Function to upload the selected image to AWS S3
    const uploadImage = async () => {
-    console.log("upload")
-    console.log(selectedFile)
     if (!selectedFile) {
       alert('Please select an image to upload');
       return;
     }
 // Create a FormData object to send the image file
-console.log("image came")
 const formData = new FormData();
 formData.append('photos', selectedFile);
 
@@ -99,8 +96,7 @@ try {
   console.error('Error uploading image:', error);
   alert('Image upload failed');
 }
-//trying
-console.log("name"+selectedFile.name);
+
 await axios.get(`http://localhost:3008/url/${selectedFile.name}`);
 setischanged(!ischanged);
 
@@ -108,10 +104,7 @@ setischanged(!ischanged);
 
  // Function to handle file selection
   const handleFileChange = (e) => {
-    console.log("change");
     setSelectedFile(e.target.files[0]);
-    console.log("chnge:", selectedFile);   
-   // uploadImage();
   };
   
   return (

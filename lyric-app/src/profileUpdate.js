@@ -82,14 +82,11 @@ function ProfileUpdate() {
   const [selectedFile, setSelectedFile] = useState();
  // Function to upload the selected image to AWS S3
   const uploadImage = async () => {
-    console.log("upload")
-    console.log(selectedFile)
     if (!selectedFile) {
       alert('Please select an image to upload');
       return;
     }
 // Create a FormData object to send the image file
-console.log("image came")
 const formData = new FormData();
 formData.append('photos', selectedFile);
 
@@ -104,19 +101,13 @@ try {
   console.error('Error uploading image:', error);
   alert('Image upload failed');
 }
-//trying
-console.log("name"+selectedFile.name);
 await axios.get(`http://localhost:3008/url/${selectedFile.name}`);
 setischanged(!ischanged);
-
 };
 
  // Function to handle file selection
   const handleFileChange = (e) => {
-    console.log("change");
     setSelectedFile(e.target.files[0]);
-    console.log("chnge:", selectedFile);   
-   // uploadImage();
   };
  
   
@@ -185,9 +176,6 @@ setischanged(!ischanged);
       <button type="button" className="button" onClick={handleSubmit}>Update</button>
       <button type="button" className="button1" onClick={handleCancel}>Cancel</button>
     </div>
-
-    {/* <input type="file" accept="image/*" onChange={handleFileChange} />
-      <button onClick={uploadImage}>Upload Image</button> */}
     </div>
     </div>
   );
